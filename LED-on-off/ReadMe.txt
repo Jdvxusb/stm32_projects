@@ -1,0 +1,1 @@
+in putty terminal led is on when typed LED ON led is off when typed LED OFF
