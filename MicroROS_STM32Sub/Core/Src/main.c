@@ -157,6 +157,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  StartDefaultTask(NULL);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -389,12 +390,8 @@ void StartDefaultTask(void *argument)
 	      &subscription_callback, ON_NEW_DATA);
 	    // Spin and wait for messages
     	//rclc_executor_spin(&executor);
-	    while (1)
-	    {
-	    	rclc_executor_spin_some(&executor, 100);
+	    	rclc_executor_spin(&executor);
 	        osDelay(10);
-	    }
-
   /* USER CODE END 5 */
 }
 
@@ -429,3 +426,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
